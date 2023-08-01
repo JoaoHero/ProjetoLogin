@@ -29,7 +29,7 @@ main {
     border-radius: 3rem;
     display: flex;
     flex-direction: column;
-    height: 65rem;
+    height: 60rem;
     width: 50rem;
     z-index: 1;
 }
@@ -55,7 +55,7 @@ main {
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    height: 36rem;
+    height: 33rem;
     justify-content: center;
     position: relative;
     width: 35rem;

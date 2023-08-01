@@ -9,7 +9,6 @@ const registerRouter = require("./controllers/register");
 app.use(express.static("public"));
 // Middleware for routers
 app.use("/", registerRouter);
-
 app.use("/", loginRouter);
 
 app.listen(port, () => console.log(`Servidor rodando na porta: ${port}`));
