@@ -5,9 +5,11 @@ const db = require("./models/db");
 const loginRouter = require("./controllers/login");
 const registerRouter = require("./controllers/register");
 const routerHome = require("./controllers/home");
+const cookieParser = require('cookie-parser');
 
 // Middleware for import css
 app.use(express.static("public"));
+app.use(cookieParser())
 // Middleware for get requisition in json and inputs
 app.use(express.urlencoded({
     extended: true
