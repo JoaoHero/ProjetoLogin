@@ -15,7 +15,7 @@ body {
     height: 100vh;
 }
 
-main {
+.main {
     align-items: center;
     border: 1px solid black;
     display: flex;
