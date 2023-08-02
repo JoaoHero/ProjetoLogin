@@ -4,6 +4,7 @@ const User = require("./../models/User");
 const path = require("path");
 const basePath = path.join(__dirname, "./../views");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 router.get("/login", (req, res) => {
     res.sendFile(`${basePath}/login.html`);
@@ -32,6 +33,12 @@ router.post("/loginUser", async (req, res) => {
             });
         }
 
+
+        let token = jwt.sign({id: user.id}, "SDHASDYASDBH6ASDA", {
+            expiresIn: 1800
+        });
+
+        res.cookie('authToken', token, { httpOnly: true });
         return res.redirect("/home");
 
     }catch (err){
