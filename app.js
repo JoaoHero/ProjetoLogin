@@ -7,6 +7,10 @@ const registerRouter = require("./controllers/register");
 
 // Middleware for import css
 app.use(express.static("public"));
+
+
+
+
 // Middleware for routers
 app.use("/", registerRouter);
 app.use("/", loginRouter);
