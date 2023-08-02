@@ -103,3 +103,42 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+
+@media (max-width: 750px) {
+    .main {
+        height: 60rem;
+        width: 40rem;
+    }
+    .container-wrapper {
+        height: 40rem;
+        width: 35rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .main {
+        height: 60rem;
+        width: 25rem;
+    }
+    .container-wrapper {
+        height: 50rem;
+        width: 25rem;
+    }
+    .container-text > p {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+    .container-text {
+        border: 1px solid red;
+        text-align: center;
+    }
+    .border-img {
+        height: 10rem;
+        width: 10rem;
+    }
+    
+    .border-img > img{
+        width: 7rem;
+    }
+}
