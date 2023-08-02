@@ -58,6 +58,7 @@ body {
     margin: 0 auto;
     height: 34rem; 
     border-radius: 2rem;
+    position: relative;
 }  
 
 .container-form > form {
@@ -118,5 +119,12 @@ body {
     font-weight: 700;
 }
 
-
-
+.arrowDetail {
+    background-color: #C9C9C9;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    height: 6rem;
+    position: absolute;
+    top: -8%;
+    width: 6rem;
+    z-index: 2;
+}
