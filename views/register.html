@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css">
+    <title>Register</title>
+</head>
+<body>
+    <main>
+        <div class="container-wrapper">
+            <div class="container-img">
+                <div class="img-border">
+                    <img src="assets/icon.png" alt="img-user">
+                </div>
+            </div>
+            <div class="container-form">
+                <div class="arrowDetail"></div>
+                <form action="/registerPost" method="post">
+                    <div class="form-controller">
+                        <label for="name">
+                            <input type="text" name="name" placeholder="Informe o seu nome completo">
+                        </label>
+                    </div>
+                    <div class="form-controller">
+                        <label for="email">
+                            <input type="email" name="email" placeholder="Qual o seu e-mail corporativo?">
+                        </label>
+                    </div>
+                    <div class="form-controller">
+                        <label for="password">
+                            <input type="password" name="password" placeholder="Qual a sua senha?">
+                        </label>
+                    </div>
+                    <div class="form-controller">
+                        <label for="company">
+                            <input type="text" name="company" list="company-list" placeholder="Qual a sua empresa?">
+                            <datalist id="company-list">
+                                <option value="Myralis">
+                                <option value="Multilaser">
+                                <option value="Sertrading">
+                                <option value="Stemac">
+                                <option value="Toyota">
+                                <option value="Uisa">
+                                <option value="Unimed">
+                            </datalist>
+                        </label>
+                    </div>
+                    <input type="submit" value="Cadastrar" id="btnRegister">
+                </form>
+                <a href="/login">Voltar para o login</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

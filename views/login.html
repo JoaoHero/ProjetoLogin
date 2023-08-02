@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+</head>
+<body>
+
+    <main class="container">
+        <div class="container-img">
+            <div class="border-img"><img src="assets/icon.png" alt="img-user"></div>
+        </div>
+        <div class="container-form">
+            <div class="arrowDetail"></div>
+            <form action="/loginUser" method="post">
+                <div class="form-controller">
+                    <label for="email">
+                        <input type="email" name="email" placeholder="Informe o seu e-mail corporativo">
+                    </label>
+                </div>
+                <div class="form-controller">
+                    <label for="password">
+                        <input type="password" name="password" placeholder="Informe a sua senha">
+                    </label>
+                </div>
+                <input type="submit" value="Entrar" id="btnLogin">
+            </form>
+            <h2>Não sabe seu login e senha?</h2>
+            <a href="/register">Efetuar um cadastro agora!</a>
+        </div>
+    </main>
+</body>
+<script src="js/script.js"></script>
+</html>
