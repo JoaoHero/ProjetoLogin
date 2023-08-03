@@ -14,6 +14,11 @@ router.post("/registerPost", async (req, res) => {
 
     user.password = await bcrypt.hash(user.password, 8);
 
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+      }
+
     try {
         if(!user.name || !user.email || !user.password || !user.company) {
             return res.status(400).json({
@@ -33,6 +38,13 @@ router.post("/registerPost", async (req, res) => {
             return res.status(400).json({
                 error: true,
                 message: "Email já cadastrado!"
+            });
+        }
+
+        if(!validateEmail(user.email)) {
+            return res.status(400).json({
+                error: true,
+                message: "Email inválido!"
             });
         }
 
