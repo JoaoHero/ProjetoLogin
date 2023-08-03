@@ -19,22 +19,22 @@
                 <form action="/registerPost" method="post">
                     <div class="form-controller">
                         <label for="name">
-                            <input type="text" name="name" placeholder="Informe o seu nome completo">
+                            <input type="text" name="name" id="inputName" placeholder="Informe o seu nome completo">
                         </label>
                     </div>
                     <div class="form-controller">
                         <label for="email">
-                            <input type="email" name="email" placeholder="Qual o seu e-mail corporativo?">
+                            <input type="email" name="email" id="inputEmail" placeholder="Qual o seu e-mail corporativo?">
                         </label>
                     </div>
                     <div class="form-controller">
                         <label for="password">
-                            <input type="password" name="password" placeholder="Qual a sua senha?">
+                            <input type="password" id="inputPassword" name="password" placeholder="Qual a sua senha?">
                         </label>
                     </div>
                     <div class="form-controller">
                         <label for="company">
-                            <input type="text" name="company" list="company-list" placeholder="Qual a sua empresa?">
+                            <input type="text" name="company" id="inputCompany" list="company-list" placeholder="Qual a sua empresa?">
                             <datalist id="company-list">
                                 <option value="Myralis">
                                 <option value="Multilaser">
@@ -46,6 +46,9 @@
                             </datalist>
                         </label>
                     </div>
+                    <div class="alert">
+                        <p>Todos os campos são obrigatórios!</p>
+                    </div>
                     <input type="submit" value="Cadastrar" id="btnRegister">
                 </form>
                 <a href="/login">Voltar para o login</a>
@@ -53,4 +56,5 @@
         </div>
     </div>
 </body>
+<script src="js/register.js"></script>
 </html>

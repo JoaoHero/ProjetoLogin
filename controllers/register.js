@@ -15,10 +15,10 @@ router.post("/registerPost", async (req, res) => {
     user.password = await bcrypt.hash(user.password, 8);
 
     try {
-        if(!user.email || !user.password) {
+        if(!user.name || !user.email || !user.password || !user.company) {
             return res.status(400).json({
                 error: true,
-                message: "E-mail e senha são obrigatórios"
+                message: "Todos os campos são obrigatórios!"
             });
         }
 
@@ -37,7 +37,10 @@ router.post("/registerPost", async (req, res) => {
         }
 
         await User.create(user);
-        return res.status(200).redirect("/login");
+        return res.status(200).json({
+            error: false,
+            message: "Email foi cadastrado com sucesso!"
+        });
 
     } catch (err){
         console.log("Erro ao tentar criar o seu usuário no banco", err);
