@@ -41,7 +41,7 @@ body {
     display: flex;
     height: 15rem;
     justify-content: center;
-    margin: 5rem;
+    margin: 3rem;
     width: 15rem;
 }
 
@@ -55,7 +55,7 @@ body {
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    height: 33rem;
+    height: 37rem;
     justify-content: center;
     position: relative;
     width: 35rem;
@@ -95,7 +95,7 @@ body {
     cursor: pointer;
     font-weight: 700;
     height: 4rem;
-    margin-top: 2rem;
+    margin-top: 3.5rem;
     width: 12rem;
 }
 
@@ -127,17 +127,21 @@ body {
 }
 
 .alert {
-    height: 2rem;
-    width: 25rem;
+    height: 3rem;
+    width: 28rem;
     background-color: red;
     border-radius: 2rem;
     display: none;
     align-items: center;
     justify-content: center;
+    margin-top: 1rem;
+    position: absolute;
+    bottom: 11.5rem;
 }
 
 .alert > p {
     font-size: 1.5rem;
     color: #fff;
     font-weight: 700;
+    text-align: center;
 }

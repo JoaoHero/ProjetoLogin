@@ -3,7 +3,8 @@ const router = express.Router();
 const User = require("./../models/User");
 const path = require("path");
 const basePath = path.join(__dirname, "./../views");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
+const validate = require("../public/js/validate");
 
 router.get("/register", (req, res) => {
     res.sendFile(`${basePath}/register.html`);
@@ -11,11 +12,6 @@ router.get("/register", (req, res) => {
 
 router.post("/registerPost", async (req, res) => {
     let user = req.body;
-
-    function validateEmail(email) {
-        var re = /\S+@\S+\.\S+/;
-        return re.test(email);
-      }
 
     try {
         if(!user.name || !user.email || !user.password || !user.company) {
@@ -39,10 +35,17 @@ router.post("/registerPost", async (req, res) => {
             });
         }
 
-        if(!validateEmail(user.email)) {
+        if(!validate.Email(user.email)) {
             return res.status(400).json({
                 error: true,
                 message: "Email inválido!"
+            });
+        }
+
+        if(!validate.Password(user.password)) {
+            return res.status(400).json({
+                error: true,
+                message: "Senha deve conter números, letras maiucuslas e minusculas"
             });
         }
 
