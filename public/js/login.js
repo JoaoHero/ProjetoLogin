@@ -19,9 +19,13 @@ form.addEventListener("submit", (event) => {
         body: JSON.stringify(formData),
     }).then((response) => response.json()).then((jsonBody) => {
         const error = jsonBody.error;
+        const message = jsonBody.message
 
         if(error === true) {
-            console.log("Com erro")
+            const div = document.querySelector(".alert");
+
+            div.style.display = "flex";
+            div.innerHTML = `<p>${message}</p>`;
         }
     })
     .catch((err) => console.log("Erro ao tentar se conectar com a rota POST", err));

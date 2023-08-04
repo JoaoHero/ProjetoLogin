@@ -22,14 +22,14 @@ router.post("/loginUser", async (req, res) => {
         if(user === null){
             return res.status(400).json({
                 error: true,
-                mensagem: "Usuário ou a senha incorreta! Nenhum usuário com este e-mail"
+                message: "Usuário ou a senha incorreta! Nenhum usuário com este e-mail"
             });
         }
 
         if(!(await bcrypt.compare(req.body.password, user.password))){
             return res.status(400).json({
                 error: true,
-                mensagem: "Usuário ou a senha incorreta! Senha incorreta!"
+                message: "Usuário ou a senha incorreta! Senha incorreta!"
             });
         }
 
