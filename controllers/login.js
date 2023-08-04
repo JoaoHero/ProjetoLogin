@@ -21,15 +21,15 @@ router.post("/loginUser", async (req, res) => {
 
         if(user === null){
             return res.status(400).json({
-                erro: true,
-                mensagem: "Erro: Usuário ou a senha incorreta! Nenhum usuário com este e-mail"
+                error: true,
+                message: "Usuário ou a senha incorreta!"
             });
         }
 
         if(!(await bcrypt.compare(req.body.password, user.password))){
             return res.status(400).json({
-                erro: true,
-                mensagem: "Erro: Usuário ou a senha incorreta! Senha incorreta!"
+                error: true,
+                message: "Usuário ou a senha incorreta!"
             });
         }
 
@@ -39,7 +39,11 @@ router.post("/loginUser", async (req, res) => {
         });
 
         res.cookie('authToken', token, { httpOnly: true });
-        return res.redirect("/home");
+
+        return res.status(200).json({
+            error: false,
+            message: "Logado com sucesso!"
+        });
 
     }catch (err){
         console.log("Erro ao tentar validar o seu usuário: ", err);

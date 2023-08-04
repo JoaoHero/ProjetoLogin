@@ -17,13 +17,16 @@
             <form action="/loginUser" method="post">
                 <div class="form-controller">
                     <label for="email">
-                        <input type="email" name="email" placeholder="Informe o seu e-mail corporativo">
+                        <input type="email" name="email" id="inputEmail" placeholder="Informe o seu e-mail corporativo">
                     </label>
                 </div>
                 <div class="form-controller">
                     <label for="password">
-                        <input type="password" name="password" placeholder="Informe a sua senha">
+                        <input type="password" name="password" id="inputPassword" placeholder="Informe a sua senha">
                     </label>
+                </div>
+                <div class="alert">
+                    <p></p>
                 </div>
                 <input type="submit" value="Entrar" id="btnLogin">
             </form>
@@ -32,4 +35,5 @@
         </div>
     </main>
 </body>
+<script src="js/login.js"></script>
 </html>

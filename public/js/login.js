@@ -3,19 +3,15 @@ const form = document.querySelector("form");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const inputName = document.querySelector("#inputName").value;
     const inputEmail = document.querySelector("#inputEmail").value;
     const inputPassword = document.querySelector("#inputPassword").value;
-    const inputCompany = document.querySelector("#inputCompany").value;
 
     const formData = {
-        name: inputName,
         email: inputEmail,
-        password: inputPassword,
-        company: inputCompany
-    };
+        password: inputPassword
+    }
 
-    fetch("/registerPost", {
+    fetch("/loginUser", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -36,12 +32,12 @@ form.addEventListener("submit", (event) => {
         }else {
             div.style.display = "flex";
             div.style.background = "green";
-            div.innerHTML = `<p>${message}</p>`;
+            div.innerHTML = `<p>${message}</p>`
 
             setTimeout(() => {
-                window.location = "/login";
+                window.location = "/home";
             }, 2000);
         }
     })
     .catch((err) => console.log("Erro ao tentar se conectar com a rota POST", err));
-});
+})
