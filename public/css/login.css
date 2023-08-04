@@ -128,3 +128,23 @@ body {
     width: 6rem;
     z-index: 2;
 }
+
+.alert {
+    height: 3.5rem;
+    width: 28rem;
+    background-color: red;
+    border-radius: 2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    position: absolute;
+    bottom: 16rem;
+}
+
+.alert > p {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
