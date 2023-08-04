@@ -12,8 +12,6 @@ router.get("/register", (req, res) => {
 router.post("/registerPost", async (req, res) => {
     let user = req.body;
 
-    user.password = await bcrypt.hash(user.password, 8);
-
     function validateEmail(email) {
         var re = /\S+@\S+\.\S+/;
         return re.test(email);
@@ -47,6 +45,8 @@ router.post("/registerPost", async (req, res) => {
                 message: "Email inválido!"
             });
         }
+
+        user.password = await bcrypt.hash(user.password, 8);
 
         await User.create(user);
         return res.status(200).json({
