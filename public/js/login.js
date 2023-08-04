@@ -19,13 +19,24 @@ form.addEventListener("submit", (event) => {
         body: JSON.stringify(formData),
     }).then((response) => response.json()).then((jsonBody) => {
         const error = jsonBody.error;
-        const message = jsonBody.message
+        const message = jsonBody.message;
+        const div = document.querySelector(".alert");
 
         if(error === true) {
-            const div = document.querySelector(".alert");
-
             div.style.display = "flex";
             div.innerHTML = `<p>${message}</p>`;
+
+            setTimeout(() => {
+                div.style.display = "none";
+            }, 4000);
+        }else {
+            div.style.display = "flex";
+            div.style.background = "green";
+            div.innerHTML = `<p>${message}</p>`
+
+            setTimeout(() => {
+                window.location = "/home";
+            }, 2000);
         }
     })
     .catch((err) => console.log("Erro ao tentar se conectar com a rota POST", err));

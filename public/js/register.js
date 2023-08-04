@@ -22,21 +22,21 @@ form.addEventListener("submit", (event) => {
         },
         body: JSON.stringify(formData),
     }).then((response) => response.json()).then((jsonBody) => {
-        if(jsonBody.error) {
-            const div = document.querySelector(".alert");
+        const error = jsonBody.error;
+        const message = jsonBody.message;
+        const div = document.querySelector(".alert");
 
+        if(error === true) {
             div.style.display = "flex";
-            div.innerHTML = `<p>${jsonBody.message}</p>`;
+            div.innerHTML = `<p>${message}</p>`;
 
             setTimeout(() => {
                 div.style.display = "none";
-            }, 2000);
+            }, 4000);
         }else {
-            const div = document.querySelector(".alert");
-
             div.style.display = "flex";
             div.style.background = "green";
-            div.innerHTML = `<p>${jsonBody.message}</p>`;
+            div.innerHTML = `<p>${message}</p>`;
 
             setTimeout(() => {
                 window.location = "/login";
