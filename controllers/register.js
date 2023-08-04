@@ -45,7 +45,7 @@ router.post("/registerPost", async (req, res) => {
         if(!validate.Password(user.password)) {
             return res.status(400).json({
                 error: true,
-                message: "Senha deve conter números, letras maiucuslas e minusculas"
+                message: "Senha deve conter 8 caracteres, entre eles, números e letras maiúsculas e minúsculas"
             });
         }
 
